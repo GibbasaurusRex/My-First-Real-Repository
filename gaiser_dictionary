@@ -1,0 +1,30 @@
+gaiser_dictionary = {
+  "bark" : "The skin of a tree.",
+  "christmas" : "The celebration of the birth of Jesus Christ.",
+  "house" : "A place that a person may buy or rent to live in",
+  "city" : "A large group of buildings, houses, and restaraunts.",
+  "apple" : "A tasty snack; A company that makes software and hardware.",
+  "gaiser" : "A middle school in Vancouver, WA.",
+  "all words" : "The keyword that prints out every word in the dictionary."
+}
+
+print("Welcome to the Gaiser Dictionary")
+print("--------------------------------")
+print("Enter a word to search for its definition (if it exists), or a word to add a new definition of.")
+print("Type 'all words' to get a list of all words currently in the dictionary.")
+print("Type the word 'quit' (to exit or leave before the natural conclusion of something) to close the dictionary.")
+
+word_input = ""
+while word_input.lower() != "quit":
+  word_input = input("Query: ").lower()
+  if word_input == "quit":
+    break
+  if word_input == "all words":
+    print(", ".join(sorted(list(gaiser_dictionary.keys()))))
+  if word_input not in gaiser_dictionary:
+    print(word_input + " is not in the dictionary. Please provide a definition.")
+    definition = input(word_input + ": ").lower()
+    gaiser_dictionary[word_input] = definition
+  print(word_input + ": " + gaiser_dictionary[word_input])
+  
+  
